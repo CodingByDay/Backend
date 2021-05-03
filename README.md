@@ -11,3 +11,5 @@ Install:
 Default login:
 admin
 test12345
+
+Template documentation: https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/documentation/
