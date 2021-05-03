@@ -6,7 +6,7 @@ Install:
 - move install/emmares outside public_html:
   - emmares
   - public_html
-      - emmares_app
+      - emmaresapp
       
 Default login:
 admin
