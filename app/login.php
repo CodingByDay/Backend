@@ -1,6 +1,7 @@
 <?php 
-require_once "../../../emmares/config.php";
-include "ASEngine/AS.php";
+$GoRoot = realpath("./../");
+require_once $GoRoot."./../../emmares/config.php";
+include $GoRoot."./app/ASEngine/AS.php";
 
 $token = app('register')->socialToken();
 ASSession::set('as_social_token', $token);
@@ -14,9 +15,9 @@ app('register')->botProtection();
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
-    <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-    <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="PIXINVENT">
+    <meta name="description" content="EMMARES">
+    <meta name="keywords" content="EMMARES">
+    <meta name="author" content="EMMARES">
     <title>Emmares</title>
     <link rel="apple-touch-icon" href="view_templates/emmares/app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="view_templates/emmares/app-assets/images/ico/favicon.ico">
@@ -72,7 +73,7 @@ app('register')->botProtection();
                         <!-- Login-->
                         <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
                             <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto" id="login">
-                                <h2 class="card-title font-weight-bold mb-1">Welcome to Emmaresx! 👋</h2>
+                                <h2 class="card-title font-weight-bold mb-1">Welcome to Emmares! 👋</h2>
                                 <p class="card-text mb-2">Please sign-in to your account and start the adventure</p>
                                 <form class="form-horizontal-login auth-login-form mt-2">
                                     <div class="form-group">
@@ -102,7 +103,7 @@ app('register')->botProtection();
                                             Sign in
                                     </button>
                                 </form>
-                                <p class="text-center mt-2"><span>New on our platform?</span><a href="page-auth-register-v2.html"><span>&nbsp;Create an account</span></a></p>
+                                <p class="text-center mt-2"><span>New on our platform?</span><a href="public/register/"><span>&nbsp;Create an account</span></a></p>
                                 <div class="divider my-2">
                                     <div class="divider-text">or</div>
                                 </div>

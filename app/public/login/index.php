@@ -1,4 +1,52 @@
-<?php require_once(view_templates_resources.'header-auth.php'); ?>
+<?php 
+$GoRoot = realpath("./../../../");
+require_once $GoRoot."./../../emmares/config.php";
+include $GoRoot."./app/ASEngine/AS.php";
+
+$token = app('register')->socialToken();
+ASSession::set('as_social_token', $token);
+app('register')->botProtection();
+?>
+<!DOCTYPE html>
+<html class="loading dark-layout" lang="en" data-layout="dark-layout" data-textdirection="ltr">
+<!-- BEGIN: Head-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
+    <meta name="description" content="EMMARES">
+    <meta name="keywords" content="EMMARES">
+    <meta name="author" content="EMMARES">
+    <title>Emmares</title>
+    <link rel="apple-touch-icon" href="../../view_templates/emmares/app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../view_templates/emmares/app-assets/images/ico/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="../../view_templates/emmares/app-assets/vendors/css/vendors.min.css">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="../../view_templates/emmares/app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../view_templates/emmares/app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="../../view_templates/emmares/app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="../../view_templates/emmares/app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="../../view_templates/emmares/app-assets/css/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="../../view_templates/emmares/app-assets/css/themes/bordered-layout.css">
+    <link rel="stylesheet" type="text/css" href="../../view_templates/emmares/app-assets/css/themes/semi-dark-layout.css">
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="../../view_templates/emmares/app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="../../view_templates/emmares/app-assets/css/plugins/forms/form-validation.css">
+    <link rel="stylesheet" type="text/css" href="../../view_templates/emmares/app-assets/css/pages/page-auth.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="../../view_templates/emmares/assets/css/style.css">
+    <!-- END: Custom CSS-->
+</head>
+<!-- END: Head-->
 <!-- BEGIN: Body-->
 <body class="vertical-layout vertical-menu-modern blank-page navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="blank-page">
     <!-- BEGIN: Content-->
@@ -12,7 +60,7 @@
                 <div class="auth-wrapper auth-v2">
                     <div class="auth-inner row m-0">
                         <!-- Brand logo--><a class="brand-logo" href="javascript:void(0);">
-                            <img style="width:300px; height:auto;" class="img-fluid" src="<?= view_templates ?>emmares/app-assets/images/logo/EmmaresLogo.svg" alt="EMMARES - Future of marketing" />
+                            <img style="width:300px; height:auto;" class="img-fluid" src="../../view_templates/emmares/app-assets/images/logo/EmmaresLogo.svg" alt="EMMARES - Future of marketing" />
                         </a>
                         <!-- /Brand logo-->
                         <!-- Left Text-->
@@ -55,7 +103,7 @@
                                             Sign in
                                     </button>
                                 </form>
-                                <p class="text-center mt-2"><span>New on our platform?</span><a href="page-auth-register-v2.html"><span>&nbsp;Create an account</span></a></p>
+                                <p class="text-center mt-2"><span>New on our platform?</span><a href="../register/"><span>&nbsp;Create an account</span></a></p>
                                 <div class="divider my-2">
                                     <div class="divider-text">or</div>
                                 </div>
@@ -69,4 +117,45 @@
         </div>
     </div>
     <!-- END: Content-->
-<?php require_once(view_templates_resources.'footer-auth.php'); ?>
+    <!-- BEGIN: Vendor JS-->
+    <script src="../../view_templates/emmares/app-assets/vendors/js/vendors.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <!--<script src="../../view_templates/emmares/app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>-->
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script src="../../view_templates/emmares/app-assets/js/core/app-menu.js"></script>
+    <script src="../../view_templates/emmares/app-assets/js/core/app.js"></script>
+    <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <script src="../../assets/js/vendor/sha512.js"></script>
+    <script src="../../assets/js/vendor/jquery.min.js"></script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../assets/js/vendor/bootstrap.min.js"></script>
+    <script src="../../assets/js/vendor/jquery-validate/jquery.validate.min.js"></script>
+    <script src="../../assets/js/app/bootstrap.php"></script>
+    <script src="../../assets/js/app/common.js"></script>
+    <?php if (ASLang::getLanguage() != DEFAULT_LANGUAGE) : ?>
+        <script src="../../assets/js/vendor/jquery-validate/localization/messages_<?= ASLang::getLanguage() ?>.js"></script>
+    <?php endif; ?>
+    
+    <script type="text/javascript" src="../../assets/js/app/login.js"></script>
+    <script type="text/javascript" src="../../assets/js/app/passwordreset.js"></script>
+    <script>
+        $(window).on('load', function() {
+            if (feather) {
+                feather.replace({
+                    width: 14,
+                    height: 14
+                });
+            }
+        })
+    </script>
+    <!-- END: Page JS-->
+</body>
+<!-- END: Body-->
+
+</html>
