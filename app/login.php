@@ -1,5 +1,5 @@
 <?php 
-require_once "../../../emmares/config.php";
+require_once "../../emmaresapp/config.php";
 include "ASEngine/AS.php";
 
 $token = app('register')->socialToken();

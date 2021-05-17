@@ -12,8 +12,10 @@
    </div>
    <div class="shadow-bottom"></div>
    <div class="main-menu-content" style="padding-top:20px;">
-      <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-         <li class="active"><a class="d-flex align-items-center" href="#"><i data-feather="home"></i><span class="menu-item text-truncate" data-i18n="Analytics">Dashboard</span></a>
+      <ul id="navItems" class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+         <li id="menuDashboard" class=""><a class="d-flex align-items-center" href="#"><i data-feather="home"></i><span class="menu-item text-truncate" data-i18n="Analytics">Dashboard</span></a>
+         </li>
+         <li id="menuMyContent" class=""><a class="d-flex align-items-center" href="index.php?page=main&action=mycontent"><i data-feather="book"></i><span class="menu-item text-truncate" data-i18n="Analytics">My Content</span></a>
          </li>
          <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Apps &amp; Pages</span><i data-feather="more-horizontal"></i>
          </li>
@@ -25,3 +27,4 @@
    </div>
 </div>
 <!-- END: Main Menu-->
+
