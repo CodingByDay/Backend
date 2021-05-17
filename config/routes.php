@@ -15,6 +15,7 @@ if (isset($_GET['page']) && isset($_GET['action'])) {
     switch($controller) {
       case 'main':
           $controller = new MainController();
+          require_once('app/models/main_users.php');
       break;
     }
 
