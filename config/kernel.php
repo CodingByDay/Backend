@@ -35,6 +35,7 @@ if (! app('login')->isLoggedIn()) {
 if (isset($_GET['page']) && isset($_GET['action'])) {
     $controller = $_GET['page'];
     $action     = $_GET['action'];
+    
   } else {
     $controller = 'main';
     $action     = 'home';

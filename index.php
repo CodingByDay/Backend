@@ -10,7 +10,7 @@
 $config = "emmares";
 
 //Include config
-require_once('../../emmares/config.php');
+require_once('../emmaresapp/config.php');
 
 //Include kernel
 require_once('config/kernel.php');

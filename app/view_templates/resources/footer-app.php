@@ -32,6 +32,9 @@
     <!-- BEGIN: Page JS-->
     <script src="<?= view_templates ?>emmares/app-assets/js/scripts/pages/dashboard-analytics.js"></script>
     <script src="<?= view_templates ?>emmares/app-assets/js/scripts/pages/app-invoice-list.js"></script>
+  
+    <!-- END: Custom CSS-->
+
     <!-- END: Page JS-->
 
     <script>
@@ -44,6 +47,9 @@
             }
         })
     </script>
+    
+    
+
 </body>
 <!-- END: Body-->
 
