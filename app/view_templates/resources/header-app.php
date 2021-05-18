@@ -40,6 +40,7 @@
 
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="<?= view_templates ?>emmares/assets/css/style.css">
-      <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- END: Custom CSS-->
+
 </head>
 <!-- END: Head-->

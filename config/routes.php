@@ -24,7 +24,7 @@ if (isset($_GET['page']) && isset($_GET['action'])) {
   }
 
   //Allowed Controllers Actions
-  $controllers = array('main' => ['home', 'error', 'mycontent']);
+  $controllers = array('main' => ['home', 'error']);
 
   //Not Allowed Action
   if (array_key_exists($controller, $controllers)) {

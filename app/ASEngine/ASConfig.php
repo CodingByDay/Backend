@@ -13,7 +13,7 @@ define('WEBSITE_DOMAIN', 'http://localhost/emmaresapp');
 define('SCRIPT_URL', 'http://localhost/emmaresapp/app/');
 
 //DATABASE CONFIGURATION
-define('DB_HOST', 'localhost:3306');
+define('DB_HOST', 'localhost:3308');
 define('DB_TYPE', 'mysql');
 define('DB_USER', 'root');
 define('DB_PASS', '');
