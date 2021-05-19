@@ -16,6 +16,7 @@ if (isset($_GET['page']) && isset($_GET['action'])) {
       case 'main':
           $controller = new MainController();
           require_once('app/models/main_users.php');
+           require_once('app/models/emails-model.php');
       break;
     }
 
@@ -24,7 +25,7 @@ if (isset($_GET['page']) && isset($_GET['action'])) {
   }
 
   //Allowed Controllers Actions
-  $controllers = array('main' => ['home', 'error']);
+  $controllers = array('main' => ['home', 'error', 'mycontent', 'useremails']);
 
   //Not Allowed Action
   if (array_key_exists($controller, $controllers)) {
