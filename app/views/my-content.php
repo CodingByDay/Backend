@@ -1,4 +1,6 @@
 <!-- BEGIN: Content-->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="<?= view_templates ?>emmares/app-assets/js/scripts/extensions/sweetalert.min.js"></script>
 
 <div class="app-content content ">
    <div class="content-overlay"></div>
@@ -34,6 +36,8 @@
   <input type="hidden" name="<?= ASCsrf::getTokenName() ?>" value="<?= ASCsrf::getToken() ?>">
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+
                      </div>
                   </div>
                </div>

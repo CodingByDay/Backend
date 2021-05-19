@@ -32,8 +32,9 @@
     <!-- BEGIN: Page JS-->
     <script src="<?= view_templates ?>emmares/app-assets/js/scripts/pages/dashboard-analytics.js"></script>
     <script src="<?= view_templates ?>emmares/app-assets/js/scripts/pages/app-invoice-list.js"></script>
+    <script src="<?= view_templates ?>emmares/app-assets/js/scripts/extensions/sweetalert.min.js"></script>
     <!-- END: Page JS-->
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
         $(window).on('load', function() {
             if (feather) {

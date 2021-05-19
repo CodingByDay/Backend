@@ -5,7 +5,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 class EmailModel {
     public $id; 
     public $id_user; 
@@ -19,20 +18,22 @@ class EmailModel {
          $this->status = $status; 
      }
 
-
-     
-     
      public static function addNewSenderEmail($userId, $address) {
 
 
         $Db = db::getInstance();     
         $sql = "INSERT INTO as_user_emails (id_user, name, status) VALUES ('$userId','$address', '0')";
-        $Db->query($sql);
-        
-   
+        if($Db->query($sql)) {
+            $_SESSION['success'] = "1";
 
-     }
-     
+        } else {
+            $_SESSION['error'] = "1";
+
+        }
+
+                 
+
+     } 
      
      public function getUserEmails($userId){
         $emailsAll = [];
