@@ -37,6 +37,20 @@
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
+<?php
+	if(isset($_SESSION['success']))
+	{
+      echo 'alert("error")';
+	?>
+	<?php
+	}
+	unset($_SESSION['success']);
+	if(isset($_SESSION['error']))
+	{
+      echo 'alert("error")';
+	}
+	unset($_SESSION['error']);
+?>
 
                      </div>
                   </div>
