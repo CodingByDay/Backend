@@ -16,11 +16,11 @@ if (isset($_GET['page']) && isset($_GET['action'])) {
       case 'main':
           $controller = new MainController();
           require_once('app/models/main_users.php');
-           require_once('app/models/emails-model.php');
+          require_once('app/models/EmailModel.php');
       break;
     }
 
-    //Call Action
+    // Call Action
     $controller->{ $action }();
   }
 

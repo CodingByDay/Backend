@@ -25,12 +25,12 @@
                         </div>
                      </div>
                      <div class="card-body">
-                                         <form  method="post" action="?mycontent">
+<form  method="post" action="index.php?page=main&action=useremails">
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+     <input type="email" class="form-control" id="exampleInputEmail1" name="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
     <small id="emailHelp" class="form-text text-muted">Confirm your sent from email address to manage your content and accesss analytics.</small>
-  </div>
+   </div>
   <input type="hidden" name="<?= ASCsrf::getTokenName() ?>" value="<?= ASCsrf::getToken() ?>">
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
