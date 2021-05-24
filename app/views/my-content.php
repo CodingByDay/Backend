@@ -1,6 +1,9 @@
 <!-- BEGIN: Content-->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="<?= view_templates ?>emmares/app-assets/js/scripts/extensions/sweetalert.min.js"></script>
+<!-- Vendor files -->
+<script src="app\view_templates\emmares\app-assets\js\scripts\extensions\sweetalert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="sweetalert2.min.css">
 
 <div class="app-content content ">
    <div class="content-overlay"></div>
@@ -40,14 +43,18 @@
 <?php
 	if(isset($_SESSION['success']))
 	{
-      echo 'alert("error")';
+      echo '<script type="text/javascript">';
+      echo 'setTimeout(function () { swal("Uspešno poslan email!","Vaš email je poslan!","success");';
+      echo '}, 1000);</script>';
 	?>
 	<?php
 	}
 	unset($_SESSION['success']);
 	if(isset($_SESSION['error']))
 	{
-      echo 'alert("error")';
+      echo '<script type="text/javascript">';
+      echo 'setTimeout(function () { swal("Prišlo je do napake","Poskusite spet!","success");';
+      echo '}, 1000);</script>';
 	}
 	unset($_SESSION['error']);
 ?>
@@ -135,3 +142,4 @@
    </div>
 </div>
 <!-- END: Content-->
+<script src="assets/js/app/sweetalert.min.js"></script>
