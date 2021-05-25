@@ -19,19 +19,21 @@ class EmailModel {
      }
 
      public static function addNewSenderEmail($userId, $address) {
-
+        // Solving an error of the unique email constraint.
 
         $Db = db::getInstance();     
         $sql = "INSERT INTO as_user_emails (id_user, name, status) VALUES ('$userId','$address', '0')";
-        if($Db->query($sql)) {
+        try {
+            $Db->query($sql);
             $_SESSION['success'] = "1";
-
-        } else {
+        } catch (PDOException $e) {
+  
             $_SESSION['error'] = "1";
-
         }
+        
 
                  
+        
 
      } 
      

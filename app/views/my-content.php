@@ -41,6 +41,8 @@
 </form>
 
 <?php
+// Cheching to see if the email address already exists in the database methods
+
 	if(isset($_SESSION['success']))
 	{
       echo '<script type="text/javascript">';
@@ -53,7 +55,7 @@
 	if(isset($_SESSION['error']))
 	{
       echo '<script type="text/javascript">';
-      echo 'setTimeout(function () { swal("Prišlo je do napake","Poskusite spet!","success");';
+      echo 'setTimeout(function () { swal("Prišlo je do napake","Poskusite spet!","error");';
       echo '}, 1000);</script>';
 	}
 	unset($_SESSION['error']);
